@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>SkySense — Weather & Air Quality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="landing.html" aria-label="SkySense home">
+        <span class="brand-mark">☁</span>
+        <span>Sky<span class="brand-accent">Sense</span></span>
+      </a>
+      <nav class="topbar-nav">
+        <a href="landing.html" class="topbar-nav-link">← Home</a>
+        <span class="top-divider"></span>
+        <span class="topbar-nav-label">Live Dashboard</span>
+      </nav>
+      <div class="topbar-right">
+        <span class="live-dot"></span>
+        <span class="live-label">LIVE WEATHER</span>
+        <span class="top-divider"></span>
+        <span id="updatedAt" class="updated-at">Waiting for data</span>
+        <span class="top-divider"></span>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle White / Black theme">
+          <span class="theme-toggle-icon">◑</span>
+          <span class="theme-toggle-text">Black</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-row">
+        <div>
+          <p class="eyebrow">WEATHER & ENVIRONMENT</p>
+          <h1>Know your <span>atmosphere.</span></h1>
+          <p class="intro-copy">Real-time weather conditions and air quality, all in one place.</p>
+        </div>
+        <form id="searchForm" class="search-box">
+          <span class="search-icon">⌕</span>
+          <input id="cityInput" type="search" placeholder="Search a city..." value="Dehradun" aria-label="Search city"
+            autocomplete="off" />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <div id="statusMessage" class="status-message" role="status" aria-live="polite"></div>
+
+      <section class="dashboard-grid">
+        <article class="card current-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">CURRENT WEATHER</p>
+              <h2 id="cityName">Dehradun, India</h2>
+              <p id="localDate" class="muted">Loading local date...</p>
+            </div>
+            <span class="weather-badge" id="weatherBadge">NOW</span>
+          </div>
+
+          <div class="current-main">
+            <div>
+              <div class="temperature"><span id="temperature">--</span><sup>°C</sup></div>
+              <p id="weatherDescription" class="weather-description">Getting conditions...</p>
+              <p class="feels-like">Feels like <strong id="feelsLike">--°</strong></p>
+            </div>
+            <div id="weatherIcon" class="weather-art" aria-hidden="true">🌤️</div>
+          </div>
+
+          <div class="weather-stats">
+            <div class="stat">
+              <span class="stat-icon">💧</span>
+              <span class="stat-label">Humidity</span>
+              <strong id="humidity">--%</strong>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">🌬️</span>
+              <span class="stat-label">Wind speed</span>
+              <strong id="windSpeed">-- km/h</strong>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">☀️</span>
+              <span class="stat-label">UV index</span>
+              <strong id="uvIndex">--</strong>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">🌡️</span>
+              <span class="stat-label">Pressure</span>
+              <strong id="pressure">-- hPa</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="card air-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">AIR QUALITY INDEX</p>
+              <h2>Air health</h2>
+            </div>
+            <span class="aqi-pill" id="aqiPill">Loading</span>
+          </div>
+
+          <div class="aqi-main">
+            <div class="aqi-number" id="aqiValue">--</div>
+            <div class="aqi-label">
+              <strong id="aqiCategory">Checking air...</strong>
+              <span id="aqiAdvice">Air quality data will appear here.</span>
+            </div>
+          </div>
+
+          <div class="aqi-meter" aria-label="Air quality scale">
+            <div class="aqi-meter-fill" id="aqiMeterFill"></div>
+          </div>
+          <div class="meter-labels"><span>Good</span><span>Moderate</span><span>Poor</span><span>Severe</span></div>
+
+          <div class="pollutants">
+            <div class="pollutant">
+              <span>PM2.5</span>
+              <strong id="pm25">-- <small>µg/m³</small></strong>
+            </div>
+            <div class="pollutant">
+              <span>PM10</span>
+              <strong id="pm10">-- <small>µg/m³</small></strong>
+            </div>
+            <div class="pollutant">
+              <span>Ozone</span>
+              <strong id="ozone">-- <small>µg/m³</small></strong>
+            </div>
+          </div>
+          <p class="small-note">AQI uses the US EPA scale based on available pollutant data.</p>
+        </article>
+      </section>
+
+      <section class="card forecast-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">UP NEXT</p>
+            <h2>5-day forecast</h2>
+          </div>
+          <span class="section-caption">Daily outlook</span>
+        </div>
+        <div id="forecast" class="forecast-list">
+          <div class="forecast-loading">Loading forecast...</div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>SkySense <span class="footer-dot">•</span> Weather for a clearer day</span>
+        <span>Data by Open-Meteo <span class="footer-dot">•</span> Updates every 10 minutes</span>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
