@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09090b" />
+  <title>SkySense — Atmospheric Intelligence, Simplified</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="landing.css" />
+</head>
+
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="landing.html" class="brand" aria-label="SkySense home">
+        <span class="brand-mark">☁</span>
+        <span class="brand-name">Sky<span class="brand-accent">Sense</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#preview">Preview</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#specs">Specs</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle White / Black theme">
+          <span class="theme-toggle-icon">◑</span>
+          <span class="theme-toggle-text">Black UI</span>
+        </button>
+        <a href="index.html" class="btn-primary">
+          <span>Launch Dashboard</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Real-Time Weather & Air Quality Engine</span>
+      </div>
+
+      <h1 class="hero-title">
+        Atmospheric intelligence,<br />
+        <span class="hero-title-gradient">simplified.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Real-time meteorological conditions, comprehensive air quality tracking, and 5-day precision forecasting for
+        every city on Earth — zero setup, 100% free, and no API keys required.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="index.html" class="btn-hero-primary">
+          <span>Open Live Dashboard</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#preview" class="btn-hero-secondary">
+          <span>Explore Features</span>
+        </a>
+      </div>
+
+      <!-- TRUST / STATS ROW -->
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <strong>100% Free</strong>
+          <span>Open public APIs</span>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="hero-stat-item">
+          <strong>200,000+</strong>
+          <span>Global cities mapped</span>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="hero-stat-item">
+          <strong>US EPA Scale</strong>
+          <span>Standardized AQI</span>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="hero-stat-item">
+          <strong>10 Min</strong>
+          <span>Live sync cadence</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE PRODUCT PREVIEW SECTION -->
+    <section id="preview" class="preview-section">
+      <div class="section-header">
+        <p class="section-eyebrow">INTERFACE PREVIEW</p>
+        <h2 class="section-title">Designed for clarity & speed</h2>
+        <p class="section-desc">A distraction-free, high-contrast monochrome dashboard engineered for instant
+          decision-making.</p>
+      </div>
+
+      <div class="mockup-window">
+        <div class="mockup-titlebar">
+          <div class="mockup-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mockup-url">
+            <span class="lock-icon">🔒</span>
+            <span>skysense.local/weather?city=Dehradun</span>
+          </div>
+          <a href="index.html" class="mockup-launch-btn" title="Open live app">Launch Live ↗</a>
+        </div>
+
+        <div class="mockup-content">
+          <div class="preview-grid">
+            <!-- Current Weather Card -->
+            <div class="preview-card current-preview">
+              <div class="card-head">
+                <div>
+                  <span class="preview-tag">CURRENT WEATHER</span>
+                  <h3>Dehradun, Uttarakhand, India</h3>
+                  <p class="preview-time">Friday, 11:30 AM • Local Time</p>
+                </div>
+                <span class="preview-badge">LIVE</span>
+              </div>
+
+              <div class="preview-temp-row">
+                <div>
+                  <div class="preview-temp">18<sup>°C</sup></div>
+                  <p class="preview-condition">Overcast</p>
+                  <p class="preview-feels">Feels like <strong>20°C</strong></p>
+                </div>
+                <div class="preview-art">⛅</div>
+              </div>
+
+              <div class="preview-metrics">
+                <div class="metric-box">
+                  <span>Humidity</span>
+                  <strong>88%</strong>
+                </div>
+                <div class="metric-box">
+                  <span>Wind Speed</span>
+                  <strong>2 km/h</strong>
+                </div>
+                <div class="metric-box">
+                  <span>UV Index</span>
+                  <strong>1.3</strong>
+                </div>
+                <div class="metric-box">
+                  <span>Pressure</span>
+                  <strong>1022 hPa</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Air Quality Card -->
+            <div class="preview-card aqi-preview">
+              <div class="card-head">
+                <div>
+                  <span class="preview-tag">AIR QUALITY INDEX</span>
+                  <h3>Air Health</h3>
+                  <p class="preview-time">US EPA Standard scale</p>
+                </div>
+                <span class="aqi-badge">Good (41)</span>
+              </div>
+
+              <div class="aqi-display">
+                <div class="aqi-val">41</div>
+                <div class="aqi-info">
+                  <strong>Good</strong>
+                  <span>Air quality is satisfactory and poses little or no risk.</span>
+                </div>
+              </div>
+
+              <div class="aqi-bar-preview">
+                <div class="aqi-bar-fill"></div>
+              </div>
+              <div class="aqi-bar-labels">
+                <span>Good</span><span>Moderate</span><span>Poor</span><span>Severe</span>
+              </div>
+
+              <div class="pollutant-preview-row">
+                <div class="pollutant-pill">
+                  <span>PM2.5</span>
+                  <strong>6.5 µg/m³</strong>
+                </div>
+                <div class="pollutant-pill">
+                  <span>PM10</span>
+                  <strong>9.2 µg/m³</strong>
+                </div>
+                <div class="pollutant-pill">
+                  <span>Ozone</span>
+                  <strong>125.0 µg/m³</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Forecast Strip -->
+          <div class="preview-forecast-strip">
+            <div class="forecast-strip-head">
+              <span class="preview-tag">5-DAY OUTLOOK</span>
+              <span class="forecast-caption">Daily Max / Min Forecast</span>
+            </div>
+            <div class="forecast-tiles">
+              <div class="forecast-tile active">
+                <span class="f-day">Today</span>
+                <span class="f-icon">🌦️</span>
+                <span class="f-desc">Dense drizzle</span>
+                <span class="f-temps"><strong>21°</strong> / 16°</span>
+              </div>
+              <div class="forecast-tile">
+                <span class="f-day">Sat</span>
+                <span class="f-icon">☀️</span>
+                <span class="f-desc">Clear sky</span>
+                <span class="f-temps"><strong>25°</strong> / 16°</span>
+              </div>
+              <div class="forecast-tile">
+                <span class="f-day">Sun</span>
+                <span class="f-icon">☀️</span>
+                <span class="f-desc">Clear sky</span>
+                <span class="f-temps"><strong>25°</strong> / 17°</span>
+              </div>
+              <div class="forecast-tile">
+                <span class="f-day">Mon</span>
+                <span class="f-icon">🌫️</span>
+                <span class="f-desc">Fog</span>
+                <span class="f-temps"><strong>25°</strong> / 14°</span>
+              </div>
+              <div class="forecast-tile">
+                <span class="f-day">Tue</span>
+                <span class="f-icon">☀️</span>
+                <span class="f-desc">Clear sky</span>
+                <span class="f-temps"><strong>26°</strong> / 16°</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE FEATURES BENTO GRID -->
+    <section id="features" class="features-section">
+      <div class="section-header">
+        <p class="section-eyebrow">POWERFUL CAPABILITIES</p>
+        <h2 class="section-title">Everything you need to know about your atmosphere</h2>
+        <p class="section-desc">Comprehensive atmospheric analytics packaged into an intuitive, high-performance
+          interface.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Geocoding Search</h3>
+          <p>Search any city, town, or capital across 195+ countries. Geocodes coordinates on-the-fly and pulls local
+            timezone data instantly.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>EPA Standard AQI</h3>
+          <p>Direct readings of PM2.5, PM10, and Ozone concentrations mapped against official US EPA break-point
+            standards with actionable health advice.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>5-Day Precision Outlook</h3>
+          <p>Plan your week with daily temperature extremes, expected sky conditions, and intuitive WMO weather
+            classification icons.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">☀️</div>
+          <h3>Hourly UV Index</h3>
+          <p>Real-time ultraviolet radiation tracking synchronized with local solar angles so you know exactly when sun
+            protection is necessary.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">◑</div>
+          <h3>White & Black UI System</h3>
+          <p>Engineered with a minimalist monochrome design philosophy. Switch effortlessly between clean White UI and
+            pitch-black Dark Mode.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔓</div>
+          <h3>Zero Keys & Open Data</h3>
+          <p>No account sign-ups, no tracking cookies, and no API keys required. Direct client-side calls to
+            Open-Meteo's open meteorological data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="how-section">
+      <div class="section-header">
+        <p class="section-eyebrow">ARCHITECTURE</p>
+        <h2 class="section-title">How SkySense works</h2>
+        <p class="section-desc">Lightning-fast client-side pipeline with zero server overhead.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4>Input City Query</h4>
+          <p>Enter any city name. Form submission captures the query with client-side validation and URL state
+            preservation.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4>Parallel API Ingestion</h4>
+          <p>Coordinates are resolved via Open-Meteo Geocoding, triggering parallel requests for atmospheric and air
+            quality telemetry.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4>Reactive DOM Rendering</h4>
+          <p>Data streams into clean, accessible DOM nodes with smooth indicator needles, responsive tables, and
+            automatic background refresh.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECS & TECH STACK -->
+    <section id="specs" class="specs-section">
+      <div class="specs-card">
+        <div class="specs-content">
+          <p class="section-eyebrow">TECHNICAL SPECIFICATIONS</p>
+          <h2 class="section-title">Pure web fundamentals</h2>
+          <p class="section-desc">Built lightweight without heavy JavaScript frameworks, bloated dependencies, or build
+            steps.</p>
+
+          <div class="specs-tags">
+            <span class="spec-tag">Vanilla JavaScript (ES6+)</span>
+            <span class="spec-tag">Modern CSS3 Custom Properties</span>
+            <span class="spec-tag">Semantic HTML5</span>
+            <span class="spec-tag">Open-Meteo Forecast API</span>
+            <span class="spec-tag">Open-Meteo Air Quality API</span>
+            <span class="spec-tag">Zero Bundlers Required</span>
+          </div>
+        </div>
+
+        <div class="specs-action">
+          <a href="index.html" class="btn-primary-large">
+            <span>Launch Dashboard Now</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CALL TO ACTION -->
+    <section class="cta-section">
+      <div class="cta-box">
+        <h2 class="cta-heading">Ready to check your atmosphere?</h2>
+        <p class="cta-copy">Experience real-time weather and air health intelligence with zero setup.</p>
+        <div class="cta-buttons">
+          <a href="index.html" class="btn-cta-main">
+            <span>Open SkySense Dashboard</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark">☁</span>
+          <span class="brand-name">Sky<span class="brand-accent">Sense</span></span>
+        </div>
+        <p class="footer-tagline">Minimalist weather and air quality intelligence for a clearer day.</p>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="index.html">Live Dashboard</a>
+          <a href="landing.html#preview">Interface Preview</a>
+          <a href="landing.html#features">Features</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Data</span>
+          <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo API</a>
+          <a href="https://www.airnow.gov/aqi/aqi-basics/" target="_blank" rel="noopener">US EPA AQI Standards</a>
+          <a href="https://wmo.int/" target="_blank" rel="noopener">WMO Weather Codes</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Quick Cities</span>
+          <a href="index.html?city=Dehradun">Dehradun</a>
+          <a href="index.html?city=Tokyo">Tokyo</a>
+          <a href="index.html?city=Paris">Paris</a>
+          <a href="index.html?city=New+York">New York</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>SkySense • Built with HTML5, CSS3, and JavaScript</span>
+      <span>Weather & Air telemetry powered by Open-Meteo</span>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Theme toggle matching dashboard preference
+    const themeToggle = document.getElementById("themeToggle");
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("skysense_theme", theme);
+      if (themeToggle) {
+        const isDark = theme === "dark";
+        const icon = themeToggle.querySelector(".theme-toggle-icon");
+        const label = themeToggle.querySelector(".theme-toggle-text");
+        if (icon) icon.textContent = isDark ? "☀️" : "🌙";
+        if (label) label.textContent = isDark ? "White UI" : "Black UI";
+      }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const themeParam = urlParams.get("theme");
+    const savedTheme = themeParam || localStorage.getItem("skysense_theme") || "light";
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme") || "light";
+        const next = current === "dark" ? "light" : "dark";
+        applyTheme(next);
+      });
+    }
+
+    // Smooth scroll for nav anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
